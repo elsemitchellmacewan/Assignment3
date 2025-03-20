@@ -27,7 +27,7 @@ typedef struct{
     char* streetAve;
     unsigned int neighbourhoodId;
     char* neighbourhoodName;
-    char* word;
+    char* ward;
     double latitude;
     double longitude;
 }PicnicTable;
