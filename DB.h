@@ -19,6 +19,41 @@
  * STRUCTS AS NEEDED.
  */
 
+ typedef struct{
+    int tableId;
+    unsigned int siteId;
+    unsigned int tableTypeId : 4;
+    unsigned int surfaceMaterialId : 4;
+    unsigned int structuralMaterialId : 4;
+    char* streetAve;
+    unsigned int neighbourhoodId;
+    char* neighbourhoodName;
+    char* ward;
+    double latitude;
+    double longitude;
+}PicnicTable;
+
+//Table and NeighbourhoodTable structs will be created depending on user request to save memory
+typedef struct{
+    unsigned int code : 4; //specifies what data the table is holding
+    char value[25]; //string to specify table
+    PicnicTable** entries; //2D array to hold entries depending on their specification
+    int count; //total entries in table
+}Table;
+
+typedef struct{
+    void* key; //key for hashing
+    void* values; //could be one value could be linked list or array
+    int count; //number of entries with associated key
+}entry;
+
+typedef struct{
+    entry* entries; //pointer to entries in hashtable
+    int size; //size of hashtable
+    int countKey; //number of entries in hashtable
+    int countVals; //total picnic tables
+}NeighbourhoodTable;
+
 /*
  * The INIT_SIZE is only relevant if you are using arrays for your data structures. 
  * If you are using linked lists you will not need it
