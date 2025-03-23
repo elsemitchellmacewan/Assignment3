@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void readFile(char *filename);
 void printTable(PicnicTable **pt, int len);
 
 int main(int argc, char *argv[]){
