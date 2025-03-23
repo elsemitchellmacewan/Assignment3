@@ -16,15 +16,6 @@
 #ifndef DB_IMPL_H
 #define DB_IMPL_H
 
-#include <stddef.h>
-
-//this is where all picnic tables will be stored - hash created by unique identifier
-typedef struct{
-    entry* entries; //pointer to entries in hashtable
-    size_t size; //size of hashtable
-    size_t count; //number of entries in hashtable
-}MainHashtable;
-
-PicnicTable *createPicnicTable(char *input);
+PicnicTableData *createPicnicTable(char *input);
 
 #endif

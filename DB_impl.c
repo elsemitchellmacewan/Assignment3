@@ -15,7 +15,7 @@
 #include <string.h>
 
 unsigned long long hash(int h){
-    uint64_t hash = 5831;
+    unsigned long long hash = 5831;
     double gr = 1.618033988;
     hash *= gr * h;
     return hash % 12;
@@ -57,8 +57,8 @@ unsigned int structuralMaterial(char *str){
     }
 }
 
-PicnicTable *createPicnicTable(char *input){
-    PicnicTable* pt = calloc(1, sizeof(PicnicTable));
+PicnicTableData *createPicnicTable(char *input){
+    PicnicTableData* pt = calloc(1, sizeof(PicnicTableData));
     if(pt == NULL){
         fprintf(stderr, "Could not allocate memory for picnic table");
         return NULL;

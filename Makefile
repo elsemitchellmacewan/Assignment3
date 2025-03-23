@@ -21,3 +21,6 @@ run: dashboard
 
 leaks:
 	leaks --atExit -- ./dashboard dataset/PicnicTableSmall.csv
+
+valgrind:
+	valgrind --leak-check=full --show-leak-kinds=all ./dashboard dataset/PicnicTableSmall.csv

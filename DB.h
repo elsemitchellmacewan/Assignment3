@@ -31,13 +31,18 @@
     char* ward;
     double latitude;
     double longitude;
+}PicnicTableData;
+
+typedef struct{
+    PicnicTableData** picnicTables;
+    int count;
 }PicnicTable;
 
 //Table and NeighbourhoodTable structs will be created depending on user request to save memory
 typedef struct{
     unsigned int code : 4; //specifies what data the table is holding
     char value[25]; //string to specify table
-    PicnicTable** entries; //2D array to hold entries depending on their specification
+    PicnicTableData** entries; //2D array to hold entries depending on their specification
     int count; //total entries in table
 }Table;
 

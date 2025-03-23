@@ -10,3 +10,18 @@
 
 #include "DB.h"       /* Import the public database header. */
 #include "DB_impl.h"  /* Import the private database header */
+#include <stdlib.h>
+
+DataBase *Db = NULL;
+
+void freeDB(){
+    for(int i = 0; i < Db->picnicTableTable->count; i++){
+        free(Db->picnicTableTable->picnicTables[i]->streetAve);
+        free(Db->picnicTableTable->picnicTables[i]->neighbourhoodName);
+        free(Db->picnicTableTable->picnicTables[i]->ward);
+        free(Db->picnicTableTable->picnicTables[i]);
+    }
+    free(Db->picnicTableTable->picnicTables);
+    free(Db->picnicTableTable);
+    free(Db);
+}
