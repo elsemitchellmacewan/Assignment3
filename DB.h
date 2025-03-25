@@ -27,8 +27,7 @@
     unsigned int structuralMaterialId : 4;
     char* streetAve;
     unsigned int neighbourhoodId;
-    char* neighbourhoodName;
-    char* ward;
+    unsigned int ward;
     double latitude;
     double longitude;
 }PicnicTableData;
@@ -41,22 +40,13 @@ typedef struct{
 //Table and NeighbourhoodTable structs will be created depending on user request to save memory
 typedef struct{
     unsigned int code : 4; //specifies what data the table is holding
-    char value[25]; //string to specify table
-    PicnicTableData** entries; //2D array to hold entries depending on their specification
+    char* value; //value(squaretable)
     int count; //total entries in table
 }Table;
 
 typedef struct{
-    void* key; //key for hashing
-    void* values; //could be one value could be linked list or array
-    int count; //number of entries with associated key
-}entry;
-
-typedef struct{
-    entry* entries; //pointer to entries in hashtable
-    int size; //size of hashtable
-    int countKey; //number of entries in hashtable
-    int countVals; //total picnic tables
+    unsigned int id;
+    char* name;
 }NeighbourhoodTable;
 
 /*

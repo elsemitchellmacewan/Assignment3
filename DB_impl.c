@@ -88,19 +88,10 @@ PicnicTableData *createPicnicTable(char *input){
         } else if(i == 6){
             pt->neighbourhoodId = (unsigned int)atoi(token);
         } else if(i == 7){
-            pt->neighbourhoodName = malloc(strlen(token) + 1);
-            if(pt->neighbourhoodName == NULL){
-                fprintf(stderr, "Could not allocate memory for neighbourhoodName");
-                return NULL;
-            }
-            strcpy(pt->neighbourhoodName, token);
+            i++;
+            continue;
         } else if(i == 8){
-            pt->ward = malloc(strlen(token) + 1);
-            if(pt->ward == NULL){
-                fprintf(stderr, "Could not allocate memory for ward");
-                return NULL;
-            }
-            strcpy(pt->ward, token);
+            pt->ward = 1;
         } else if(i == 9){
             pt->latitude = (double)atof(token);
         } else if(i == 10){

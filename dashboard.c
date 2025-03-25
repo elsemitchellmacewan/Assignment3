@@ -72,8 +72,8 @@ void printTable(DataBase *db, int len){
         printf("Structural Material ID: %u\n", db->picnicTableTable->picnicTables[i]->structuralMaterialId);
         printf("Street/Ave: %s\n", db->picnicTableTable->picnicTables[i]->streetAve);
         printf("Neighbourhood ID: %d\n", db->picnicTableTable->picnicTables[i]->neighbourhoodId);
-        printf("Neighbourhood Name: %s\n", db->picnicTableTable->picnicTables[i]->neighbourhoodName);
-        printf("Ward: %s\n", db->picnicTableTable->picnicTables[i]->ward);
+        printf("Neighbourhood Name: %s\n", "blank for now");
+        printf("Ward: %d\n", db->picnicTableTable->picnicTables[i]->ward);
         printf("Latitude: %lf\n", db->picnicTableTable->picnicTables[i]->latitude);
         printf("Longitude: %lf\n\n", db->picnicTableTable->picnicTables[i]->longitude);
     }
